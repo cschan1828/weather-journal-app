@@ -4,11 +4,13 @@ let baseURL = 'https://api.openweathermap.org/data/2.5/weather';
 const apiKey = '3b2d73cfc21e91ace5e23ac4f09c8d35';
 
 // Create a new date instance dynamically with JS
-let d = new Date();
-let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
+let dateTime = new Date();
+
+// In JS, January is 0
+let newDate = `${dateTime.getFullYear()}-${String(dateTime.getMonth()+1).padStart(2, '0')}-${dateTime.getDate()}`
 
 const getWeather = async(baseURL, zipCode, apiKey) => {
-  const res = await fetch(`${baseURL}?q=${zipCode}&appid=${apiKey}`);
+  const res = await fetch(`${baseURL}?q=${zipCode}&appid=${apiKey}&units=imperial`);
   try {
     const data = await res.json();
     return data;
@@ -24,7 +26,6 @@ function recordData(e) {
   const feelings = document.getElementById('feelings').value;
   getWeather(baseURL, zipCode, apiKey)
     .then( (data) => {
-      console.log(data);
       // Add data by POST request
       postData('/add', {
         temp: data.main.temp,
@@ -40,7 +41,7 @@ function recordData(e) {
 }
 
 const postData = async(url='', data={}) => {
-  console.log(`postData ${JSON.stringify(data)}`);
+
   const res = await fetch(url, {
     method: 'POST',
     credentials: 'same-origin',
@@ -57,20 +58,16 @@ const postData = async(url='', data={}) => {
 };
 
 const updateUI = async() => {
-  console.log('updating');
+
   const request = await fetch('/all');
   try {
     const allData = await request.json();
+    console.log(allData);
 
-    // Random pickup a record
-    sampleData = allData[Math.floor(Math.random() * allData.length)];
-    console.log(sampleData)
-
-    if (sampleData.date !== undefined && sampleData.temp !== undefined && sampleData.content !== undefined) {
-      console.log('')
-      document.getElementById('date').innerHTML = sampleData.date;
-      document.getElementById('temp').innerHTML = sampleData.temp;
-      document.getElementById('content').innerHTML = sampleData.content;
+    if (allData.date !== undefined && allData.temp !== undefined && allData.content !== undefined) {
+      document.getElementById('date').innerHTML = `Date: ${allData.date}`;
+      document.getElementById('temp').innerHTML = `Temp (°F): ${allData.temp}`;
+      document.getElementById('content').innerHTML = `Content: ${allData.content}`;
     }
   } catch (error) {
     console.log(error);
