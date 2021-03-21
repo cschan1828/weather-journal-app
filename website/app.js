@@ -19,7 +19,7 @@ const getWeather = async(baseURL, zipCode, apiKey) => {
   }
 }
 
-document.getElementById('generate').addEventListener('click', recordData);
+document.querySelector('.generate').addEventListener('click', recordData);
 
 function recordData(e) {
   const zipCode = document.getElementById('zip').value;

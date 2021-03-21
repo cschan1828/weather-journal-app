@@ -85,22 +85,14 @@ input, textarea {
   transform: translateY(-50px);
 }
 
-#content {
-  width: 60%;
-  margin-left: 50%;
-  transform: translateX(-50%);
-  font-size: 1.2em;
+#entryHolder {
+  font-size: 1.5em;
+  margin-top: 7em;
 }
 
-#temp {
+#date, #temp, #content {
+  margin: 10px;
   font-family: 'Manrope', sans-serif;
-  font-size: 3.5em;
-  margin-top: -80px;
-}
-
-#location, #date {
-  color: dimgrey;
-  margin: 5px;
 }
 
 @media (max-width: 850px) {
