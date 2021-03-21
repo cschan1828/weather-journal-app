@@ -1,112 +1,114 @@
-body {
-  background-color: gray;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-}
-
-#app {
-  /* display: grid; */
-  grid-auto-rows: minmax(auto, auto);
-  /* grid-template-columns:  */
-  height:100vh;
-  background-color: gray;
-  color: black;
-  justify-content: center;
-  grid-gap: 1em;
-  font-size: 20px;
-  font-family: 'Oswald', sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500&display=swap');
 
 .headline {
   font-size: 2em;
-  font-weight: bold;
 }
 
-.feelings_entry {
-  display: flex;
-  flex-direction: column;
+body {
+  margin: 0;
+  background-color: #1d3557;
+  font-family: 'Poppins', sans-serif;
 }
 
-#generate {
-  margin-top: 10px;
+#app {
+  text-align: center;
+  background-color: whitesmoke;
+  width: 700px;
+  height: 900px;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  border-radius: 20px;
+  box-shadow: 20px 20px #14213d;
 }
 
-.entryHolder{
-  border-collapse: collapse;
-  width: 100%;
-  margin-bottom: 10px;
+#app > .title {
+  background-color: white;
+  height: 100px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  line-height: 100px;
+  font-size: 3em;
 }
 
-.title {
+.zip {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#zip {
+  width: 70%;
+  height: 50px;
   font-size: 1.5em;
-  margin-bottom: 10px;
-}
-
-/*  Basic Styling To Override Default For Basic HTML Elements */
-label {
-  display:block;
-  font-size: 1.5em;
-  margin-bottom: 10px;
-}
-
-input {
-  display:block;
-  height: 45px;
-  width: 100%;
-  background:black;
-  color: white;
-  font-size: 20px;
-  font-family: 'Oswald', sans-serif;
-  border: none;
-}
-
-button {
-  width: 100%;
-  height: 45px;
-  background: blue;
-  color: white;
-  font-size: 26px;
-  font-family: 'Oswald', sans-serif;
-  border: none;
-  box-shadow: 2px 4px 5px #444;
-}
-
-h1 {
-  font-size: 36px;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  padding-left: 10px;
 }
 
 textarea {
-  background:black;
-  height: 6em;
-  color: yellow;
-  font-size: 20px;
-  font-family: 'Oswald', sans-serif;
-  resize: vertical;
-}
-/* Reset style for HTML element on active to have no border*/
-input:focus,
-select:focus,
-textarea:focus,
-button:focus {
-    outline: none;
-}
-/* Style for Placeholder Text*/
-::placeholder { /* Firefox, Chrome, Opera */
-  color: white;
-  font-family: 'Oswald', sans-serif;
+  padding-left: 10px;
+  width: 70%;
+  height: 100px;
+  border-radius: 10px;
+  font-size: 1.5em;
+  font-family: 'Poppins', sans-serif;
+  resize: none;
 }
 
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: white;
-  font-family: 'Oswald', sans-serif;
+input, textarea {
+  border: none;
+  outline: none;
 }
 
-::-ms-input-placeholder { /* Microsoft Edge */
+.generate {
+  background-color: #006d77;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  width: 80%;
+  height: 80px;
+  transform: translateX(-50%);
+  border-radius: 40px;
+  line-height: 80px;
   color: white;
-  font-family: 'Oswald', sans-serif;
+  font-size: 1.5em;
 }
 
-td, th {
-  border: 1px solid black;
-  text-align: left;
-  padding: 8px;
+.generate:hover {
+  background-color: #00a896;
+}
+
+.icon > img {
+  width: 42%;
+  transform: translateY(-50px);
+}
+
+#content {
+  width: 60%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2em;
+}
+
+#temp {
+  font-family: 'Manrope', sans-serif;
+  font-size: 3.5em;
+  margin-top: -80px;
+}
+
+#location, #date {
+  color: dimgrey;
+  margin: 5px;
+}
+
+@media (max-width: 850px) {
+  #app {
+    width: 350px;
+    height: 700px;
+  }
+  #app > .title {
+    font-size: 1.8em;
+  }
 }
