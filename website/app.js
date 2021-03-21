@@ -62,7 +62,6 @@ const updateUI = async() => {
   const request = await fetch('/all');
   try {
     const allData = await request.json();
-    console.log(allData);
 
     if (allData.date !== undefined && allData.temp !== undefined && allData.content !== undefined) {
       document.getElementById('date').innerHTML = `Date: ${allData.date}`;
