@@ -3,17 +3,19 @@
 
 .headline {
   font-size: 2em;
+  margin-top: 50px;
 }
 
 body {
   margin: 0;
-  background-color: #1d3557;
+  background-color: whitesmoke;
   font-family: 'Poppins', sans-serif;
+  color: white;
 }
 
 #app {
   text-align: center;
-  background-color: whitesmoke;
+  background-color: #11698e;
   width: 700px;
   height: 900px;
   position: absolute;
@@ -34,7 +36,7 @@ body {
 }
 
 .zip {
-  margin-top: 20px;
+  margin-top: 80px;
   margin-bottom: 20px;
 }
 
@@ -63,7 +65,7 @@ input, textarea {
 }
 
 .generate {
-  background-color: #006d77;
+  background-color: #00a896;
   position: absolute;
   bottom: 20px;
   left: 50%;
@@ -77,7 +79,7 @@ input, textarea {
 }
 
 .generate:hover {
-  background-color: #00a896;
+  background-color: #00CDB7;
 }
 
 .icon > img {
